@@ -50,22 +50,22 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="1Uf-Zx-WIF">
-                                        <rect key="frame" x="70" y="0.0" width="41" height="114"/>
+                                        <rect key="frame" x="70" y="0.0" width="37" height="114"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GqQ-SX-DPe">
-                                                <rect key="frame" x="0.0" y="0.0" width="41" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="37" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yNI-3f-fKv">
-                                                <rect key="frame" x="0.0" y="42" width="41" height="30"/>
+                                                <rect key="frame" x="0.0" y="42" width="37" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mq7-Ou-mIe">
-                                                <rect key="frame" x="0.0" y="84" width="41" height="30"/>
+                                                <rect key="frame" x="0.0" y="84" width="37" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -73,22 +73,32 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="jgf-dz-iof">
-                                        <rect key="frame" x="121" y="0.0" width="218" height="114"/>
+                                        <rect key="frame" x="117" y="0.0" width="222" height="114"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="B3k-P5-sdt">
-                                                <rect key="frame" x="-2" y="0.0" width="222" height="31"/>
+                                                <rect key="frame" x="-2" y="0.0" width="226" height="31"/>
+                                                <connections>
+                                                    <action selector="redSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="DgW-9m-jTg"/>
+                                                </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WzY-ci-w6V">
-                                                <rect key="frame" x="-2" y="42" width="222" height="31"/>
+                                                <rect key="frame" x="-2" y="42" width="226" height="31"/>
+                                                <connections>
+                                                    <action selector="greenSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="VMY-NS-8Vy"/>
+                                                </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dYf-xq-HWe">
-                                                <rect key="frame" x="-2" y="84" width="222" height="31"/>
+                                                <rect key="frame" x="-2" y="84" width="226" height="31"/>
+                                                <connections>
+                                                    <action selector="blueSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="YSb-oQ-hGI"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="jgf-dz-iof" firstAttribute="width" secondItem="vCe-ad-RAN" secondAttribute="height" multiplier="44:23" id="UKv-ns-lZ3"/>
+                                    <constraint firstItem="1Uf-Zx-WIF" firstAttribute="width" secondItem="vCe-ad-RAN" secondAttribute="height" multiplier="37:114" id="Dqc-aB-dAE"/>
+                                    <constraint firstItem="jgf-dz-iof" firstAttribute="width" secondItem="vCe-ad-RAN" secondAttribute="height" multiplier="37:19" id="jeF-iU-HVu"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -104,6 +114,15 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u4P-os-gux" secondAttribute="trailing" constant="32" id="qnh-JQ-RvA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blueSlider" destination="dYf-xq-HWe" id="4ej-pa-zMa"/>
+                        <outlet property="colorView" destination="u4P-os-gux" id="DlL-J2-a34"/>
+                        <outlet property="greenSlider" destination="WzY-ci-w6V" id="aCS-ZR-Yff"/>
+                        <outlet property="redSlider" destination="B3k-P5-sdt" id="aqj-3X-0B8"/>
+                        <outlet property="valueBlueLabel" destination="Mq7-Ou-mIe" id="0M0-mR-VZf"/>
+                        <outlet property="valueGreenLabel" destination="yNI-3f-fKv" id="cpY-QM-eXF"/>
+                        <outlet property="valueRedLabel" destination="GqQ-SX-DPe" id="4WI-tg-KO9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
