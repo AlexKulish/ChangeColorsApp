@@ -18,42 +18,50 @@ class ViewController: UIViewController {
     @IBOutlet var valueGreenLabel: UILabel!
     @IBOutlet var valueBlueLabel: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        colorView.layer.cornerRadius = 20
         
-        redSlider.value = 0.5
+        redSlider.value = 0.25
         redSlider.minimumValue = 0
         redSlider.maximumValue = 1
         redSlider.minimumTrackTintColor = .red
+        let valueRedColor = CGFloat(redSlider.value)
         
-        greenSlider.value = 0.5
+        greenSlider.value = 0.75
         greenSlider.minimumValue = 0
         greenSlider.maximumValue = 1
         greenSlider.minimumTrackTintColor = .green
+        let valueGreenColor = CGFloat(greenSlider.value)
         
-        blueSlider.value = 0.5
+        blueSlider.value = 0.35
         blueSlider.minimumValue = 0
         blueSlider.maximumValue = 1
         blueSlider.minimumTrackTintColor = .blue
+        let valueBLueColor = CGFloat(blueSlider.value)
         
         valueRedLabel.text = String(redSlider.value)
         valueGreenLabel.text = String(greenSlider.value)
         valueBlueLabel.text = String(blueSlider.value)
         
+        colorView.layer.cornerRadius = 20
+        colorView.backgroundColor = UIColor(red: valueRedColor, green: valueGreenColor, blue: valueBLueColor, alpha: 1)
+        
     }
-
-    @IBAction func redSliderAction() {
+    
+    @IBAction func slidersAction() {
         valueRedLabel.text = String(format: "%.2f", redSlider.value)
-    }
-    
-    @IBAction func greenSliderAction() {
+        let valueRedColor = CGFloat(redSlider.value)
+        
         valueGreenLabel.text = String(format: "%.2f", greenSlider.value)
-    }
-    
-    @IBAction func blueSliderAction() {
+        let valueGreenColor = CGFloat(greenSlider.value)
+        
         valueBlueLabel.text = String(format: "%.2f", blueSlider.value)
+        let valueBLueColor = CGFloat(blueSlider.value)
+        
+        colorView.backgroundColor = UIColor(red: valueRedColor, green: valueGreenColor, blue: valueBLueColor, alpha: 1)
     }
     
 }
+
 
