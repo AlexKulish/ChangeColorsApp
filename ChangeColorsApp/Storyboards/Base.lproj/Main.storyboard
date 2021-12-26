@@ -3,6 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,26 +17,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVY-Tz-chc">
-                                <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVY-Tz-chc">
+                                <rect key="frame" x="328" y="20" width="27" height="26"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="square.and.pencil" catalog="system" symbolScale="large"/>
+                                </state>
                                 <connections>
-                                    <action selector="settingsButtonAction" destination="esc-qQ-CpE" eventType="touchUpInside" id="qyc-bU-VVu"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="6ua-sI-YOc"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="" id="6ua-sI-YOc"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5ov-e1-KNT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yVY-Tz-chc" firstAttribute="centerX" secondItem="1fT-4y-ynZ" secondAttribute="centerX" id="2pu-uJ-DaN"/>
-                            <constraint firstItem="yVY-Tz-chc" firstAttribute="centerY" secondItem="1fT-4y-ynZ" secondAttribute="centerY" id="yDk-lY-yzi"/>
+                            <constraint firstItem="yVY-Tz-chc" firstAttribute="top" secondItem="5ov-e1-KNT" secondAttribute="top" constant="20" id="h2i-po-r2w"/>
+                            <constraint firstItem="5ov-e1-KNT" firstAttribute="trailing" secondItem="yVY-Tz-chc" secondAttribute="trailing" constant="20" id="s7b-ob-vja"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="settingsButton" destination="yVY-Tz-chc" id="cuj-6o-VV2"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tzi-Re-amL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -131,13 +130,13 @@
                                                     <action selector="slidersAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="nR0-Oy-Ajm"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.75" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WzY-ci-w6V">
+                                            <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.75" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WzY-ci-w6V">
                                                 <rect key="frame" x="-2" y="46" width="195" height="35"/>
                                                 <connections>
                                                     <action selector="slidersAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="tic-Ls-Fkc"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.34999999999999998" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dYf-xq-HWe">
+                                            <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.34999999999999998" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dYf-xq-HWe">
                                                 <rect key="frame" x="-2" y="92" width="195" height="35"/>
                                                 <connections>
                                                     <action selector="slidersAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="hNO-Ih-TLx"/>
@@ -153,12 +152,12 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.00" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z90-Rq-I1W">
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.00" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z90-Rq-I1W">
                                                 <rect key="frame" x="0.0" y="46" width="50" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.00" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4uQ-wa-nfK">
+                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.00" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4uQ-wa-nfK">
                                                 <rect key="frame" x="0.0" y="92" width="50" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -188,7 +187,6 @@
                         <outlet property="blueSlider" destination="dYf-xq-HWe" id="4ej-pa-zMa"/>
                         <outlet property="blueTextField" destination="4uQ-wa-nfK" id="WyT-5n-pch"/>
                         <outlet property="colorView" destination="u4P-os-gux" id="DlL-J2-a34"/>
-                        <outlet property="doneButton" destination="EMg-S8-w0X" id="HQ7-zu-ubh"/>
                         <outlet property="greenSlider" destination="WzY-ci-w6V" id="aCS-ZR-Yff"/>
                         <outlet property="greenTextField" destination="Z90-Rq-I1W" id="V7Q-3Q-Qua"/>
                         <outlet property="redSlider" destination="B3k-P5-sdt" id="aqj-3X-0B8"/>
@@ -204,6 +202,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
